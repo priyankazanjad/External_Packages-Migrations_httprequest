@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <title>show employee</title>
+    {% endblock %}
+{% block content %}
+<h2 style="text-align:center;">Show Employee</h2>
+<table class="table table-dark">
+    <tr>
+        <th>Employee Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>City</th>
+        <th>Salary</th>
+        <th>Action</th>
+        <th>Update</th>
+    </tr>
+    {% for emp in employee %}
+    <tr>
+        <td>{{emp.eid}}</td>
+        <td>{{emp.fname}}</td>
+        <td>{{emp.lname}}</td>
+        <td>{{emp.city}}</td>
+        <td>{{emp.salary}}</td>
+        <td><a href="{% url 'delete_emp' emp.eid %}"><button class="btn btn-danger">Delete</button></a></td>
+        <td><a href="{% url 'update_emp' emp.eid %}"><button class="btn btn-warning">Update</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a href="{% url 'add_emp' %}"><button class="btn btn-success">Add Employee</button></a>
+{% endblock %}

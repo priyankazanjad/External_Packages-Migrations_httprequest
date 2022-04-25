@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <title>layout</title>
+    {% endblock %}
+{% block content %}
+<h2 style="text-align:center;">Add Employee</h2>
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" value="Add Employee">
+    </form>
+
+</div>
+{% endblock %}
