@@ -1,2 +1,2 @@
-# Migrations_httprequest
-migrations, handling http requests
+# External_Packages, Migrations_httprequest
+django admin interface, sentry, django debug toolbar, django all auth,    migrations, handling http requests
